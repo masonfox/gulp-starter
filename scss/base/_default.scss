@@ -1,0 +1,81 @@
+// delete this file when using in production
+// this file houses all styles for landing
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700|Montserrat:400,700|Cutive+Mono|Numans');
+$default-font: Montserrat Alternates !important;
+$second-font: Numans !important;
+
+$gulp-red: rgb(207, 70, 70);
+
+html {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $default-font;
+}
+
+.heading {
+  margin-top: 1em;
+  text-align: center;
+  
+  h1, h2, h3, h4, h5, h6 {
+    &:after {
+      content: '';
+      height: 1px;
+      width: 30%;
+      display: block;
+      margin: .5em auto 1em auto;
+      background: $gulp-red;
+    }
+  }
+}
+
+.sub-heading {
+  font-family: $second-font;
+}
+
+.land {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    rgba(207, 70, 70, .7), 
+    rgba(207, 70, 70, .7)
+    // rgba(0, 0, 0, .7), 
+    // rgba(0, 0, 0, .7)
+  ),
+  url('https://images.unsplash.com/photo-1445620466293-d6316372ab59?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=bccb92db735f108588edea0330bb2aca');
+  background-position: center center;
+  // backgrond-size: cover;
+  position: relative;
+  
+  .intro {
+    width: auto;
+    padding: 2em 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    @media (max-width: $tablet) {
+      top: 45%;
+      text-align: center;
+    }
+    
+    .gulp-img {
+      height: 15em;
+      width: auto;
+      float: right;
+      @media (max-width: $tablet) {
+        float: none;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .text {
+      top: 4em;
+      color: #fff;
+      @media (max-width: $tablet) {
+        top: 0;
+      }
+    }
+  }
+}
