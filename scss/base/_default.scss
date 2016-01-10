@@ -1,11 +1,13 @@
 // delete this file when using in production
 // this file houses all styles for landing
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700|Montserrat:400,700|Cutive+Mono|Numans');
-$default-font: Montserrat Alternates !important;
-$second-font: Numans !important;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500');
 
-$gulp-red: rgb(207, 70, 70);
+$default-font: Roboto !important;
+$second-font: Open Sans !important;
+
+$gulp-red: rgba(207, 70, 70, .25);
 
 html {
   height: 100%;
@@ -15,11 +17,22 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $default-font;
 }
 
+p {
+  font-family: $second-font;
+  font-size: 1.25em;
+}
+
+.spacing {
+  padding: 3em 0;
+}
+
 .heading {
-  margin-top: 1em;
+  // padding: 3em 0;
   text-align: center;
+  font-weight: 300;
   
   h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
     &:after {
       content: '';
       height: 1px;
@@ -39,14 +52,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   width: 100%;
   background: linear-gradient(
-    rgba(207, 70, 70, .7), 
-    rgba(207, 70, 70, .7)
-    // rgba(0, 0, 0, .7), 
-    // rgba(0, 0, 0, .7)
-  ),
-  url('https://images.unsplash.com/photo-1445620466293-d6316372ab59?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=bccb92db735f108588edea0330bb2aca');
+    rgba(207, 70, 70, .65), 
+    rgba(207, 70, 70, .65)
+  );
   background-position: center center;
-  // backgrond-size: cover;
+  backgrond-size: cover;
+  overflow-x: hidden;
   position: relative;
   
   .intro {
@@ -56,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 50%;
     transform: translateY(-50%);
     @media (max-width: $tablet) {
-      top: 45%;
+      top: 50%;
       text-align: center;
     }
     
@@ -76,6 +87,71 @@ h1, h2, h3, h4, h5, h6 {
       @media (max-width: $tablet) {
         top: 0;
       }
+      h1 {
+        font-weight: 200;
+      }
     }
+  }
+}
+
+.whatis {
+  @extend .spacing;
+  background: rgba(0,0,0,.05);
+}
+
+.includes {
+  padding: 3em 0;
+  h3 {
+    text-align: center;
+    font-weight: 300;
+    
+    &:after {
+      content: '';
+      height: 1px;
+      width: 30%;
+      display: block;
+      margin: .75em auto .5em auto;
+      background: rgba(0,0,0,.1);
+    }
+  }
+  p {
+    text-align: center;
+  }
+  .includes-img {
+    height: 6em;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.never {
+  font-weight: 300;
+}
+
+.gulp {
+  text-align: center;
+  padding: 1em .25em;
+  background: lighten(#CF4646, 2%);
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: 200;
+  display: none;
+}
+
+.show {
+  height: auto;
+  
+}
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+  background: lighten(#CF4646, 2%);
+  color: #fff;
+  
+  h5 {
+    font-family: $default-font;
+    font-weight: 300;
   }
 }
