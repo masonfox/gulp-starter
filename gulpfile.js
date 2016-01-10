@@ -4,31 +4,6 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
-// var watch = require('gulp-watch');
-
-// gulp.task('sass', function () {
-//   gulp.src('./scss/**/*.scss')
-//     .pipe(sass.sync().on('error', sass.logError))
-//     .pipe(gulp.dest('./css'))
-//     .pipe(browserSync.stream());
-// });
-// 
-// gulp.task('watch', function () {
-//     return gulp.src('css/**/*.css')
-//         .pipe(watch('./scss/**/*.scss'))
-//         .pipe(gulp.dest('css'));
-// });
-// 
-// gulp.task('serve', function() {
-//     browserSync.init({
-//         server: {
-//             baseDir: './',
-//             host: 'localhost'
-//         }
-//     });
-// });
-// 
-// gulp.task('default', ['serve']);
 
 gulp.task('serve', ['sass'], function() {
 
