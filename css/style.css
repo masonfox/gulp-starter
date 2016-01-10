@@ -1,30 +1,42 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700|Montserrat:400,700|Cutive+Mono|Numans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,100,300,500");
 html {
   height: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Montserrat Alternates !important; }
+  font-family: Roboto !important; }
+
+p {
+  font-family: Open Sans !important;
+  font-size: 1.25em; }
+
+.spacing, .whatis {
+  padding: 3em 0; }
 
 .heading {
-  margin-top: 1em;
-  text-align: center; }
-  .heading h1:after, .heading h2:after, .heading h3:after, .heading h4:after, .heading h5:after, .heading h6:after {
-    content: '';
-    height: 1px;
-    width: 30%;
-    display: block;
-    margin: .5em auto 1em auto;
-    background: #cf4646; }
+  text-align: center;
+  font-weight: 300; }
+  .heading h1, .heading h2, .heading h3, .heading h4, .heading h5, .heading h6 {
+    font-weight: 300; }
+    .heading h1:after, .heading h2:after, .heading h3:after, .heading h4:after, .heading h5:after, .heading h6:after {
+      content: '';
+      height: 1px;
+      width: 30%;
+      display: block;
+      margin: .5em auto 1em auto;
+      background: rgba(207, 70, 70, 0.25); }
 
 .sub-heading {
-  font-family: Numans !important; }
+  font-family: Open Sans !important; }
 
 .land {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(rgba(207, 70, 70, 0.7), rgba(207, 70, 70, 0.7)), url("https://images.unsplash.com/photo-1445620466293-d6316372ab59?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=bccb92db735f108588edea0330bb2aca");
+  background: linear-gradient(rgba(207, 70, 70, 0.65), rgba(207, 70, 70, 0.65));
   background-position: center center;
+  backgrond-size: cover;
+  overflow-x: hidden;
   position: relative; }
   .land .intro {
     width: auto;
@@ -34,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-50%); }
     @media (max-width: 768px) {
       .land .intro {
-        top: 45%;
+        top: 50%;
         text-align: center; } }
     .land .intro .gulp-img {
       height: 15em;
@@ -51,6 +63,55 @@ h1, h2, h3, h4, h5, h6 {
       @media (max-width: 768px) {
         .land .intro .text {
           top: 0; } }
+      .land .intro .text h1 {
+        font-weight: 200; }
+
+.whatis {
+  background: rgba(0, 0, 0, 0.05); }
+
+.includes {
+  padding: 3em 0; }
+  .includes h3 {
+    text-align: center;
+    font-weight: 300; }
+    .includes h3:after {
+      content: '';
+      height: 1px;
+      width: 30%;
+      display: block;
+      margin: .75em auto .5em auto;
+      background: rgba(0, 0, 0, 0.1); }
+  .includes p {
+    text-align: center; }
+  .includes .includes-img {
+    height: 6em;
+    width: auto;
+    display: block;
+    margin: 0 auto; }
+
+.never {
+  font-weight: 300; }
+
+.gulp {
+  text-align: center;
+  padding: 1em .25em;
+  background: #d14e4e;
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: 200;
+  display: none; }
+
+.show {
+  height: auto; }
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+  background: #d14e4e;
+  color: #fff; }
+  footer h5 {
+    font-family: Roboto !important;
+    font-weight: 300; }
 
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
