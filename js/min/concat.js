@@ -1,3 +1,9 @@
+$(document).ready(function(){
+  $('.never-gulp').on('click', function(){
+    $('.gulp').slideToggle();
+  });
+});
+
 /*!
  * parallax.js v1.3.1 (http://pixelcog.github.io/parallax.js/)
  * @copyright 2015 PixelCog, Inc.

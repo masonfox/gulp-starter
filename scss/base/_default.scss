@@ -9,7 +9,7 @@ $second-font: Open Sans !important;
 
 $gulp-red: rgba(207, 70, 70, .25);
 
-html {
+html, body {
   height: 100%;
 }
 
@@ -30,7 +30,7 @@ p {
   // padding: 3em 0;
   text-align: center;
   font-weight: 300;
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     &:after {
@@ -46,20 +46,32 @@ p {
 
 .sub-heading {
   font-family: $second-font;
+  font-weight: 300;
+}
+
+.bar {
+  &:after {
+    content: '';
+    height: 1px;
+    width: 30%;
+    display: block;
+    margin: .5em auto 1em auto;
+    background: $gulp-red;
+  }
 }
 
 .land {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background: linear-gradient(
-    rgba(207, 70, 70, .65), 
+    rgba(207, 70, 70, .65),
     rgba(207, 70, 70, .65)
   );
   background-position: center center;
-  backgrond-size: cover;
+  background-size: cover;
   overflow-x: hidden;
   position: relative;
-  
+
   .intro {
     width: auto;
     padding: 2em 0;
@@ -70,7 +82,7 @@ p {
       top: 50%;
       text-align: center;
     }
-    
+
     .gulp-img {
       height: 15em;
       width: auto;
@@ -100,11 +112,20 @@ p {
 }
 
 .includes {
-  padding: 3em 0;
+  padding-bottom: 3em;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+
+  .item {
+    margin: 2em auto;
+    height: 21em;
+  }
+
   h3 {
     text-align: center;
     font-weight: 300;
-    
+
     &:after {
       content: '';
       height: 1px;
@@ -116,6 +137,7 @@ p {
   }
   p {
     text-align: center;
+    font-weight: 200;
   }
   .includes-img {
     height: 6em;
@@ -141,17 +163,51 @@ p {
 
 .show {
   height: auto;
+}
+
+.download {
+  background: lighten(#CF4646, 2%);
+  color: #fff;
+  padding: 5em 0;
+  width: 50%;
+  float: left;
   
+  @media (max-width: $tablet) {
+    width: 100%;
+  }
 }
 
 footer {
   text-align: center;
   padding: 1em 0;
-  background: lighten(#CF4646, 2%);
+  background: darken(#CF4646, 2%);
   color: #fff;
-  
+  clear: both;
+
   h5 {
     font-family: $default-font;
     font-weight: 300;
+  }
+}
+
+.button {
+  border: 1px solid #fff;
+  padding: 1em 2em;
+  color: #fff;
+  transition: all 500ms ease;
+  text-decoration: none;
+  
+  &:hover, &:focus {
+    background: #fff;
+    color: lighten(#CF4646, 2%);
+    text-decoration: none;
+  }
+}
+
+.grunt {
+  background: lighten(#fba919, 3%);
+  
+  .bar:after {
+    visibility: hidden;
   }
 }
