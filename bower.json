@@ -1,0 +1,14 @@
+{
+  "name": "gulp-starter",
+  "description": "A basic gulp-starter",
+  "main": "gulpfile.js",
+  "authors": [
+    "Mason Fox"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "gulp"
+  ],
+  "moduleType": [],
+  "homepage": ""
+}
