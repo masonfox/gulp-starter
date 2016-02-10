@@ -8,10 +8,9 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var clean = require('gulp-clean');
-var jade = require('gulp-jade');
 var autoprefixer = require('gulp-autoprefixer');
  
-gulp.task('serve', ['sass', 'jade', 'js'], function() {
+gulp.task('serve', ['sass', 'js'], function() {
 
     browserSync.init({
         server: './',
@@ -20,7 +19,7 @@ gulp.task('serve', ['sass', 'jade', 'js'], function() {
     });
 
     gulp.watch('./scss/**/*.scss', ['sass']);
-    gulp.watch('./**/*.jade', ['jade']);
+    gulp.watch('./**/*.html').on('change', browserSync.reload);
     gulp.watch('./js/*.js', ['js-watch']).on('change', browserSync.reload);
 });
 
@@ -33,15 +32,6 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('css'))
         .pipe(browserSync.stream());
 });
-
-// gulp.task('autoprefixer', function () {
-// 	return gulp.src('css/style.css')
-// 		.pipe(autoprefixer({
-// 			browsers: ['last 2 versions'],
-// 			cascade: false
-// 		}))
-// 		.pipe(gulp.dest('css/style.css'));
-// });
 
 gulp.task('clean', function () {
     return gulp.src('js/min', {read: false})
@@ -57,13 +47,6 @@ gulp.task('js', ['clean'], function(){
         .pipe(gulp.dest('js/min'));
 });
 gulp.task('js-watch', ['js']);
-
-gulp.task('jade', function() {
-  return gulp.src('jade/**/*.jade')
-    .pipe(jade()) // pip to jade plugin
-    .pipe(gulp.dest('./')) // tell gulp our output folder
-    .pipe(browserSync.stream());
-});
 
 // register main task
 gulp.task('default', ['serve']);
